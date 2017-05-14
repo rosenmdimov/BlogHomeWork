@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tests
-
+namespace BlogBuild.Tests.Pages.CreatePostPage
 {
-    public class BlogIntegrationTests
+    class CreatePostPageAsserter
     {
-        //some logic
     }
 }
