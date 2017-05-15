@@ -8,7 +8,10 @@ namespace BlogUITests
 {
     [TestFixture]
     public class BlogUITests
-    {
+{
+
+
+
         [Test]
         public void CheckSiteLoad()
         {

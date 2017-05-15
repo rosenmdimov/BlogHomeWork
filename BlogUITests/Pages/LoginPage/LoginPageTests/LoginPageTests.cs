@@ -21,6 +21,14 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
 
             this.driver = new ChromeDriver();
         }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            this.driver.Quit();
+        }
+
+
         [Test]
         [Property ("UITest Login loaded",1)]
         public void LoginPageLoaded()
