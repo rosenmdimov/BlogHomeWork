@@ -15,22 +15,18 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
     {
         private IWebDriver driver;
 
-        [SetUp]
-        public void Init()
-        {
 
-            this.driver = new ChromeDriver();
-        }
-
-        [TearDown]
-        public void CleanUp()
-        {
-            this.driver.Quit();
-        }
 
 
         [Test]
         [Property ("UITest Login loaded",1)]
+
+        [SetUp]
+        public void Init()
+        {
+            //this.driver = new InternetExplorerDriver();
+            this.driver = new ChromeDriver();
+        }
         public void LoginPageLoaded()
         {
             var loginPage = new LoginPage(this.driver);
