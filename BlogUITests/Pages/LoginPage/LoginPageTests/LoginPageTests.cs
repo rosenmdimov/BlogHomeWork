@@ -15,6 +15,19 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
     {
         private IWebDriver driver;
 
+        [SetUp]
+        public void Init()
+        {
+            //this.driver = new InternetExplorerDriver();
+            this.driver = new ChromeDriver();
+        }
+        [TearDown]
+        public void CleanUp()
+        {
+            this.driver.Quit();
+        }
+
+
 
 
 

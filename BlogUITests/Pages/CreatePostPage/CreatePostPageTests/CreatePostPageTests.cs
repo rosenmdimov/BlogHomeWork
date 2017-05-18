@@ -21,6 +21,11 @@ namespace BlogBuild.Tests.Pages.CreatePostPage.CreatePostPageTests
             //this.driver = new InternetExplorerDriver();
             this.driver = new ChromeDriver();
         }
+        [TearDown]
+        public void CleanUp()
+        {
+            this.driver.Quit();
+        }
 
         [Test]
         [Property ("Create New Post",1)]
