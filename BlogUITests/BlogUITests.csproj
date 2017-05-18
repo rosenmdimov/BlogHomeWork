@@ -121,6 +121,7 @@
     <Compile Include="Pages\CreatePostPage\CreatePostPage.cs" />
     <Compile Include="Pages\CreatePostPage\CreatePostPageAsserter.cs" />
     <Compile Include="Pages\CreatePostPage\CreatePostPageMap.cs" />
+    <Compile Include="Pages\CreatePostPage\CreatePostPageTests\CreatePostPageTests.cs" />
     <Compile Include="Pages\LoginPage\LoginPage.cs" />
     <Compile Include="Pages\LoginPage\LoginPageAsserter.cs" />
     <Compile Include="Pages\LoginPage\LoginPageMap.cs" />

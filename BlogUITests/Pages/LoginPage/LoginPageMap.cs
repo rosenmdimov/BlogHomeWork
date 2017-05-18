@@ -39,6 +39,13 @@ namespace BlogBuild.Tests.Pages.LoginPage
                 return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/h2"));
             }
         }
+        public IWebElement CreateButton
+        {
+            get
+            {
+                return this.Driver.FindElement(By.LinkText("/Article/Create"));
+            }
+        }
 
     }
 }

@@ -46,7 +46,7 @@ namespace BlogBuild.Tests.Pages.CreatePostPage
         {
             get
             {
-                return this.Driver.FindElement(By.ClassName("btn btn-success"));
+                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[4]/div/input"));
 
             }
         }

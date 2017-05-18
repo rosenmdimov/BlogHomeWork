@@ -25,17 +25,17 @@ namespace BlogBuild.Tests.Pages.CreatePostPage
                 return base.url + "Article/Create";
             }
         }
-      //public void LoggingIn()
-      //{
-      //    var loginPage = new LoginPage.LoginPage(this.Driver);
-      //    var accountPage = new AccountPage.AccountPage(this.Driver);
-      //
-      //    loginPage.NavigateTo();
-      //    loginPage.Type(loginPage.Email, "abv@abv.bg");
-      //    loginPage.Type(loginPage.Password, "123");
-      //    loginPage.LoginButton.Click();
-      //
-      //}
+      public void LoggingIn()
+      {
+          var loginPage = new LoginPage.LoginPage(this.Driver);
+          var accountPage = new AccountPage.AccountPage(this.Driver);
+      
+          loginPage.NavigateTo();
+          loginPage.Type(loginPage.Email, "abv@abv.bg");
+          loginPage.Type(loginPage.Password, "123");
+          loginPage.LoginButton.Click();
+      
+      }
 
     }
 }

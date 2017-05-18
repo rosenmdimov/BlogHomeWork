@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using NUnit.Framework;
 
 namespace BlogBuild.Tests.Pages.AccountPage
 {
@@ -24,5 +25,6 @@ namespace BlogBuild.Tests.Pages.AccountPage
                 return base.url + "Article/List";
             }
         }
+        
     }
 }
