@@ -34,12 +34,7 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
         [Test]
         [Property ("UITest Login loaded",1)]
 
-        [SetUp]
-        public void Init()
-        {
-            //this.driver = new InternetExplorerDriver();
-            this.driver = new ChromeDriver();
-        }
+
         public void LoginPageLoaded()
         {
             var loginPage = new LoginPage(this.driver);
