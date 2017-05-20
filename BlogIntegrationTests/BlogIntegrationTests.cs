@@ -27,11 +27,11 @@ namespace Tests
             //this.driver = new InternetExplorerDriver();
             this.driver = new ChromeDriver();
         }
-       // [TearDown]
-       // public void CleanUp()
-       // {
-       //     this.driver.Quit();
-       // }
+        [TearDown]
+        public void CleanUp()
+        {
+            this.driver.Quit();
+        }
 
         [Test]
         [Property("Integration Test", 1)]
