@@ -33,7 +33,7 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
 
         [Test]
         [Property ("UITest Login loaded",1)]
-
+        [Author("Rossen Dimov")]
 
         public void LoginPageLoaded()
         {
@@ -46,6 +46,7 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
 
         [Test]
         [Property ("User Is Logged In",1)]
+        [Author("Rossen Dimov")]
         public void TryToLoggingIn()
         {
             var loginPage = new LoginPage(this.driver);

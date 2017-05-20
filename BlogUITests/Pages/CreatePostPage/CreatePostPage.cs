@@ -36,6 +36,22 @@ namespace BlogBuild.Tests.Pages.CreatePostPage
           loginPage.LoginButton.Click();
       
       }
+        public void CreateNewPost(string titleOfPost, string contentOfPost)
+        {
+            var loginPage = new LoginPage.LoginPage(this.Driver);
+            var accountPage = new AccountPage.AccountPage(this.Driver);
+            var createPostPage = new CreatePostPage(this.Driver);
+           //string titleOfPost = "New Important Post";
+           //string contentOfPost = "That is new post created";
+
+            loginPage.Login();
+
+            createPostPage.NavigateTo();
+            //loginPage.CreateButton.Click();
+            createPostPage.Type(createPostPage.Title, titleOfPost);
+            createPostPage.Type(createPostPage.Content, contentOfPost);
+            createPostPage.CreatelButton.Click();
+        }
 
     }
 }
