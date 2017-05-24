@@ -53,7 +53,6 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
             var accountPage = new AccountPage.AccountPage(this.driver);
 
             loginPage.Login();
-            //git
             accountPage.NavigateTo();
             accountPage.AssertIsLogged("Hello abv@abv.bg!");
         }

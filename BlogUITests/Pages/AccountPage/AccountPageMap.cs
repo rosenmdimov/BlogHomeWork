@@ -22,6 +22,7 @@ namespace BlogBuild.Tests.Pages.AccountPage
             get
             {
                 return this.Driver.FindElement(By.PartialLinkText("New Important Post"));
+                
             }
         }
         public IWebElement FindContent

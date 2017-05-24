@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace BlogBuild.Tests.Pages.CreatePostPage
         {
 
             Assert.AreEqual(text, page.FindContent);
+        }
+       public static void AsserterForMissingElement(string e)
+       {
+            Assert.AreEqual("NoSuchElementException", e);
         }
     }
 }

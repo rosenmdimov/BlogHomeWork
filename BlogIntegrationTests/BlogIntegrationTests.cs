@@ -21,7 +21,7 @@ namespace Tests
         private IWebDriver driver;
 
         [SetUp]
-        
+
         public void Init()
         {
             //this.driver = new InternetExplorerDriver();
@@ -61,16 +61,31 @@ namespace Tests
             var loginPage = new LoginPage(this.driver);
             var accountPage = new AccountPage(this.driver);
             accountPage.NavigateTo();
-            
-            if(accountPage.FindNewPostTitle.Text.Equals("New Important Post"))
+          //  string newPostLink = accountPage.FindNewPostTitle.Text;
+            try
             {
-                
                 loginPage.Login();
+                
                 accountPage.FindNewPostTitle.Click();
                 this.driver.FindElement(By.XPath("/html/body/div[2]/div/article/footer/a[2]")).Click();
                 this.driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[3]/div/input")).Click();
+                if(accountPage.FindNewPostTitle.Text == null)
+                {
+                    CreatePostPageAsserter.AsserterForMissingElement("NoSuchElementException");
+                }
+            }
+            catch (NoSuchElementException )
+            {
+                CreatePostPageAsserter.AsserterForMissingElement("NoSuchElementException");
                 
             }
+
+
+
+
+
+
+
         }
     }
 }
