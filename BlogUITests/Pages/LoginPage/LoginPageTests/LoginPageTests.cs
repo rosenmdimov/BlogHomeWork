@@ -1,4 +1,5 @@
-﻿using BlogBuild.Tests.Pages.AccountPage;
+﻿using BlogBuild.Tests.Models;
+using BlogBuild.Tests.Pages.AccountPage;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -51,9 +52,10 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
         {
             var loginPage = new LoginPage(this.driver);
             var accountPage = new AccountPage.AccountPage(this.driver);
-
-            loginPage.Login();
             accountPage.NavigateTo();
+            accountPage.LoginLink.Click();
+            loginPage.Login();
+ 
             accountPage.AssertIsLogged("Hello abv@abv.bg!");
         }
     }

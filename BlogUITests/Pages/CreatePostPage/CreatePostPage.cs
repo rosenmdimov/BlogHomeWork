@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using BlogBuild.Tests.Models;
 
 namespace BlogBuild.Tests.Pages.CreatePostPage
 {
@@ -22,13 +23,13 @@ namespace BlogBuild.Tests.Pages.CreatePostPage
         {
             get
             {
-                return base.url + "Article/Create";
+                return url + "Article/Create";
             }
         }
       public void LoggingIn()
       {
           var loginPage = new LoginPage.LoginPage(this.Driver);
-          var accountPage = new AccountPage.AccountPage(this.Driver);
+          //var accountPage = new AccountPage.AccountPage(this.Driver);
       
           loginPage.NavigateTo();
           loginPage.Type(loginPage.Email, "abv@abv.bg");
@@ -36,15 +37,15 @@ namespace BlogBuild.Tests.Pages.CreatePostPage
           loginPage.LoginButton.Click();
       
       }
-        public void CreateNewPost(string titleOfPost, string contentOfPost)
+        public void CreateNewPost()
         {
             var loginPage = new LoginPage.LoginPage(this.Driver);
-            var accountPage = new AccountPage.AccountPage(this.Driver);
+           // var accountPage = new AccountPage.AccountPage(this.Driver);
             var createPostPage = new CreatePostPage(this.Driver);
-           //string titleOfPost = "New Important Post";
-           //string contentOfPost = "That is new post created";
+           string titleOfPost = "New Important Post";
+           string contentOfPost = "That is new post created";
 
-            loginPage.Login();
+            //loginPage.Login();
 
             createPostPage.NavigateTo();
             //loginPage.CreateButton.Click();

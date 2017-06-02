@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,10 @@ namespace BlogBuild.Tests.Pages
     {
 
 
-        protected string url = "http://localhost:60634/";
+        protected string url = ConfigurationManager.AppSettings["URL"];
         private IWebDriver driver;
         private WebDriverWait wait;
+
 
         public BasePage(IWebDriver driver)
         {

@@ -31,7 +31,36 @@ namespace BlogBuild.Tests.Pages.AccountPage
             {
                 return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[10]/article/p"));
             }
-                }
+        }
+        public IWebElement LoginLink
+        {
+            get
+            {
+                return this.Driver.FindElement(By.Id("loginLink"));
+            }
+        }
+        public IWebElement NumberOfPosts
+        {
+            get
+            {
+                return this.Driver.FindElement(By.ClassName("col-sm-6"));
+            }
+        }
+        public IWebElement AccountPageTitle
+        {
+            get
+            {
+                return this.Driver.FindElement(By.ClassName("Title"));
+            }
+        }
+        public IWebElement CreateNewPost
+        {
+            get
+            {
+                return this.Driver.FindElement(By.LinkText("/Article/Create"));
+            }
+                
+        }
 
     }
 }
