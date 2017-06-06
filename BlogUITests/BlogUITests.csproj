@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataDrivenTests\" />
+    <Folder Include="Logs\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

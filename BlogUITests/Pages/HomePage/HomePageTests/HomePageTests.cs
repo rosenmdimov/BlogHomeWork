@@ -1,9 +1,12 @@
 ﻿using Dapper;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +29,14 @@ namespace BlogBuild.Tests.Pages.HomePage.HomePageTests
            [TearDown]
            public void CleanUp()
            {
-               this.driver.Quit();
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+                var path = ConfigurationManager.AppSettings["Logs"] + TestContext.CurrentContext.Test.Name + ".txt";
+                File.WriteAllText(path, TestContext.CurrentContext.Test.FullName + " " + TestContext.CurrentContext.TestDirectory);
+                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                screenshot.SaveAsFile(path + TestContext.CurrentContext.Test.Name + ".jpg", ScreenshotImageFormat.Jpeg);
+            }
+            this.driver.Quit();
            }
 
             [Test]

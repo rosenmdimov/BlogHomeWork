@@ -1,10 +1,13 @@
 ﻿using BlogBuild.Tests.Models;
 using BlogBuild.Tests.Pages.AccountPage;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +28,13 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
         [TearDown]
         public void CleanUp()
         {
+            if(TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+                var path = ConfigurationManager.AppSettings["Logs"] + TestContext.CurrentContext.Test.Name + ".txt";
+                File.WriteAllText(path, TestContext.CurrentContext.Test.FullName + " " + TestContext.CurrentContext.TestDirectory);
+                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                screenshot.SaveAsFile(path + TestContext.CurrentContext.Test.Name + ".jpg", ScreenshotImageFormat.Jpeg);
+            }
             this.driver.Quit();
         }
 
