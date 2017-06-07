@@ -49,7 +49,7 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
         public void LoginPageLoaded()
         {
             var loginPage = new LoginPage(this.driver);
-
+            
             loginPage.NavigateTo();
 
             loginPage.AssertLoginPageLoaded("Log in");
@@ -60,11 +60,13 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
         [Author("Rossen Dimov")]
         public void TryToLoggingIn()
         {
+            var user = AccessExcelData.GetTestData("TryToLoggingIn");
             var loginPage = new LoginPage(this.driver);
             var accountPage = new AccountPage.AccountPage(this.driver);
+            
             accountPage.NavigateTo();
             accountPage.LoginLink.Click();
-            loginPage.Login();
+            loginPage.Login(user);
  
             accountPage.AssertIsLogged("Hello abv@abv.bg!");
         }

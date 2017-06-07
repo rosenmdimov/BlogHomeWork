@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using BlogBuild.Tests.Models;
+using Dapper;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
@@ -60,7 +61,8 @@ namespace BlogBuild.Tests.Pages.HomePage.HomePageTests
 
             public void CreateNewPost()
             {
-                var accountPage = new AccountPage.AccountPage(this.driver);
+            var user = AccessExcelData.GetTestData("TryToLoggingIn");
+            var accountPage = new AccountPage.AccountPage(this.driver);
             var loginPage = new LoginPage.LoginPage(this.driver);
             var createPostPage = new CreatePostPage.CreatePostPage(this.driver);
             accountPage.NavigateTo();
@@ -69,7 +71,7 @@ namespace BlogBuild.Tests.Pages.HomePage.HomePageTests
                 accountPage.LoginLink.Click();
 
                 loginPage.NavigateTo();
-                loginPage.Login();
+                loginPage.Login(user);
             }
 
             createPostPage.CreateNewPost();
@@ -85,13 +87,13 @@ namespace BlogBuild.Tests.Pages.HomePage.HomePageTests
         [Author("Rossen Dimov")]
         public void DeletePost()
         {
-
+            var user = AccessExcelData.GetTestData("TryToLoggingIn");
             var accountPage = new AccountPage.AccountPage(this.driver);
             var loginPage = new LoginPage.LoginPage(this.driver);
             //  string newPostLink = accountPage.FindNewPostTitle.Text;
             // try
             // {
-            loginPage.Login();
+            loginPage.Login(user);
             accountPage.NavigateTo();
             var postCountbefore = this.driver.FindElements(By.TagName("a"));
 

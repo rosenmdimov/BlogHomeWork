@@ -1,5 +1,6 @@
 ﻿using BlogBuild.Tests.Models;
 using Dapper;
+using NUnit.Framework;
 using System;
 using System.Configuration;
 using System.Data.OleDb;
@@ -12,7 +13,8 @@ namespace BlogBuild.Tests.Models
     {
         public static string TestDataFileConnection()
         {
-            var path = ConfigurationManager.AppSettings["TestDataSheetPath"];
+            //var path = ConfigurationManager.AppSettings["TestDataSheetPath"];
+            var path = TestContext.CurrentContext.TestDirectory + "../../../DataDrivenTests/";
             var filename = "UserData.xlsx";
             var con = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;
 		                              Data Source = {0}; 
