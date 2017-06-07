@@ -60,12 +60,11 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
         [Author("Rossen Dimov")]
         public void TryToLoggingIn()
         {
-            var user = AccessExcelData.GetTestData("Login");
             var loginPage = new LoginPage(this.driver);
             var accountPage = new AccountPage.AccountPage(this.driver);
             accountPage.NavigateTo();
             accountPage.LoginLink.Click();
-            loginPage.Login(user);
+            loginPage.Login();
  
             accountPage.AssertIsLogged("Hello abv@abv.bg!");
         }

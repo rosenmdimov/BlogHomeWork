@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using BlogBuild.Tests.Models;
 
 namespace BlogBuild.Tests.Pages.LoginPage
 {
@@ -30,13 +29,13 @@ namespace BlogBuild.Tests.Pages.LoginPage
 
 
 
-        public void Login(User user)
+        public void Login()
         {
             var loginPage = new LoginPage(this.Driver);
 
             loginPage.NavigateTo();
-            loginPage.Type(loginPage.Email, user.Email);
-            loginPage.Type(loginPage.Password, user.Password);
+            loginPage.Type(loginPage.Email, "abv@abv.bg");
+            loginPage.Type(loginPage.Password, "123");
             loginPage.LoginButton.Click();
         }
     }
