@@ -1,0 +1,1 @@
+BlogBuild.Tests.Pages.HomePage.HomePageTests.HomePageTests.CreateNewPost C:\TeamCity\buildAgent\work\b35ead273d5bafac\BlogUITests\bin\Debug
