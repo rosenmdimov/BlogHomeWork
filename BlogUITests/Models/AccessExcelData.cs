@@ -15,7 +15,6 @@ namespace BlogBuild.Tests.Models
         public static string TestDataFileConnection()
         {
             
-            //var path = ConfigurationManager.AppSettings["TestDataSheetPath"];
             var path = ConfigurationManager.AppSettings["TestDataSheetPath"];
             var filename = "UserData.xlsx";
             var con = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;
