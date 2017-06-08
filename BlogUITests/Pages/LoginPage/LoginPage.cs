@@ -38,6 +38,7 @@ namespace BlogBuild.Tests.Pages.LoginPage
             loginPage.Type(loginPage.Email, user.Email);
             loginPage.Type(loginPage.Password, user.Password);
             loginPage.LoginButton.Click();
+
         }
     }
 }

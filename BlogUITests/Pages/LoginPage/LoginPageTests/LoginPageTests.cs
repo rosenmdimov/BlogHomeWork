@@ -4,6 +4,7 @@ using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -69,6 +70,21 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
             loginPage.Login(user);
  
             accountPage.AssertIsLogged("Hello abv@abv.bg!");
+        }
+        [Test]
+        [Property("Login With Invalid Username", 1)]
+        [Author("Rossen Dimov")]
+        public void LoginWithInvalidUser()
+        {
+            var user = AccessExcelData.GetTestData("LoginWithInvalidUser");
+            var loginPage = new LoginPage(this.driver);
+            var accountPage = new AccountPage.AccountPage(this.driver);
+
+            loginPage.NavigateTo();
+            
+            loginPage.Login(user);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            loginPage.AssertErrorMessageForMail("The Email field is not a valid e-mail address.");
         }
     }
 }

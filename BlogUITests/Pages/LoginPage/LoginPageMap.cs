@@ -46,6 +46,12 @@ namespace BlogBuild.Tests.Pages.LoginPage
                 return this.Driver.FindElement(By.LinkText("/Article/Create"));
             }
         }
-
+        public IWebElement EmailErrorMessage
+        {
+            get
+            {
+                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[1]/div/span/span"));
+            }
+        }
     }
 }

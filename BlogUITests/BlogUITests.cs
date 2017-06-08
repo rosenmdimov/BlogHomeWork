@@ -40,7 +40,7 @@ namespace BlogUITests
         [Author("Rossen Dimov")]
         public void CheckSiteLoad()
         {
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
             var accountPage = new AccountPage(this.driver);
             accountPage.NavigateTo();
 
