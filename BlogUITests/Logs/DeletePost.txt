@@ -1,1 +1,0 @@
-BlogBuild.Tests.Pages.HomePage.HomePageTests.HomePageTests.DeletePost C:\TeamCity\buildAgent\work\b35ead273d5bafac\BlogIntegrationTests\bin\Debug
