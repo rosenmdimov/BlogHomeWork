@@ -16,11 +16,11 @@ namespace BlogBuild.Tests.Models
         {
 
             //var path = ConfigurationManager.AppSettings["TestDataSheetPath"];
-            var path = TestContext.CurrentContext.TestDirectory.ToString();
+            var path = DataDrivenFile =>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..//..//DataDrivenTests/");
             var filename = "UserData.xlsx";
             var con = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;
 		                              Data Source = {0}; 
-		                              Extended Properties=Excel 12.0;", path + "../../DataDrivenTests/" + filename);
+		                              Extended Properties=Excel 12.0;", path + "..//..//DataDrivenTests/" + filename);
             return con;
         }
 
