@@ -53,5 +53,12 @@ namespace BlogBuild.Tests.Pages.LoginPage
                 return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[1]/div/span/span"));
             }
         }
+        public IWebElement ErrorPasswordMessage
+        {
+            get
+            {
+                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[1]"));
+            }
+        }
     }
 }

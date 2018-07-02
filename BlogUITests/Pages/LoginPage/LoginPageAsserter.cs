@@ -19,6 +19,10 @@ namespace BlogBuild.Tests.Pages.LoginPage
         {
             Assert.AreEqual(text, page.ErrorEmailMessage.Text);
         }
+        public static void AssertErrorMessageForPassword(this LoginPage page, string text)
+        {
+            Assert.AreEqual(text, page.ErrorPasswordMessage.Text);
+        }
 
     }
 }
