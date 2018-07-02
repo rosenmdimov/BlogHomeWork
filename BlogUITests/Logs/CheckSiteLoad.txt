@@ -1,0 +1,1 @@
+BlogUITests.BlogUITests.CheckSiteLoad D:\ROSSEN\QA\C#\HomeWork\BlogHomeWork\BlogUITests\bin\Debug

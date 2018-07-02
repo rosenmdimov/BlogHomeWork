@@ -1,0 +1,1 @@
+BlogBuild.Tests.Pages.HomePage.HomePageTests.HomePageTests.HomePageIsLoaded D:\ROSSEN\QA\C#\HomeWork\BlogHomeWork\BlogUITests\bin\Debug

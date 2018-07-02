@@ -6,12 +6,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
 {
@@ -25,6 +21,7 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
         {
             //this.driver = new InternetExplorerDriver();
             this.driver = new ChromeDriver();
+            
         }
         [TearDown]
         public void CleanUp()
