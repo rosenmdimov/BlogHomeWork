@@ -84,21 +84,21 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
             loginPage.AssertErrorMessageForMail("The Email field is not a valid e-mail address.");
         }
 
-      //  [Test]
-      //  [Property("Login Without Password", 1)]
-      //  [Author("Rossen Dimov")]
-      //  public void LoginWithoutPassword()
-      //  {
-      //      var user = AccessExcelData.GetTestData("LoginWithoutPassword");
-      //      var loginPage = new LoginPage(this.driver);
-      //      var accountPage = new AccountPage.AccountPage(this.driver);
-      //
-      //      accountPage.NavigateTo();
-      //      accountPage.LoginLink.Click();
-      //      loginPage.Login(user);
-      //      WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-      //      loginPage.AssertErrorMessageForPassword("Invalid login attempt.");
-      //  }
+        [Test]
+        [Property("Login Without Password", 1)]
+        [Author("Rossen Dimov")]
+        public void LoginWithoutPassword()
+        {
+            var user = AccessExcelData.GetTestData("LoginWithoutPassword");
+            var loginPage = new LoginPage(this.driver);
+            var accountPage = new AccountPage.AccountPage(this.driver);
+      
+            accountPage.NavigateTo();
+            accountPage.LoginLink.Click();
+            loginPage.Login(user);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            loginPage.AssertErrorMessageForPassword("Invalid login attempt.");
+        }
     }
 }
 
