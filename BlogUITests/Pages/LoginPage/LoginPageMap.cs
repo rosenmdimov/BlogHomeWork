@@ -36,7 +36,7 @@ namespace BlogBuild.Tests.Pages.LoginPage
         {
             get
             {
-                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/h2"));
+                return this.Driver.FindElement(By.XPath("//div/div/h2"));
             }
         }
         public IWebElement CreateButton
@@ -50,14 +50,14 @@ namespace BlogBuild.Tests.Pages.LoginPage
         {
             get
             {
-                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[1]/div/span/span"));
+                return this.Driver.FindElement(By.XPath("//div/div/form/div[1]/div/span/span"));
             }
         }
         public IWebElement ErrorPasswordMessage
         {
             get
             {
-                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[1]"));
+                return this.Driver.FindElement(By.XPath("//div/div/form/div[1]"));
             }
         }
     }
