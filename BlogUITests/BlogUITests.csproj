@@ -140,6 +140,9 @@
     <Compile Include="Pages\LoginPage\LoginPageAsserter.cs" />
     <Compile Include="Pages\LoginPage\LoginPageMap.cs" />
     <Compile Include="Pages\LoginPage\LoginPageTests\LoginPageTests.cs" />
+    <Compile Include="Pages\RegisterPage\RegisterPage.cs" />
+    <Compile Include="Pages\RegisterPage\RegisterPageAsserter.cs" />
+    <Compile Include="Pages\RegisterPage\RegisterPageMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

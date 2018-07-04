@@ -92,7 +92,6 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
             var user = AccessExcelData.GetTestData("LoginWithoutPassword");
             var loginPage = new LoginPage(this.driver);
             var accountPage = new AccountPage.AccountPage(this.driver);
-      
             accountPage.NavigateTo();
             accountPage.LoginLink.Click();
             loginPage.Login(user);

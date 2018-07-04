@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogUITests", "BlogUITests\BlogUITests.csproj", "{0C26AF3A-E4DA-457E-B0E7-DF6A70387BE0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6C52807F-2DF3-47F0-B2E1-C2BB7C47CACD}"
+	ProjectSection(SolutionItems) = preProject
+		BlogUITests\BrowserHost.cs = BlogUITests\BrowserHost.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,5 +46,8 @@ Global
 		{A928E34D-3B8F-408C-9E26-4AE103D77CBE} = {6C52807F-2DF3-47F0-B2E1-C2BB7C47CACD}
 		{5D8B7B1A-42B7-41C0-980B-4C94CEBBAEBA} = {6C52807F-2DF3-47F0-B2E1-C2BB7C47CACD}
 		{0C26AF3A-E4DA-457E-B0E7-DF6A70387BE0} = {6C52807F-2DF3-47F0-B2E1-C2BB7C47CACD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F33325F-FA0F-4D3B-862D-EC82C33E8351}
 	EndGlobalSection
 EndGlobal
