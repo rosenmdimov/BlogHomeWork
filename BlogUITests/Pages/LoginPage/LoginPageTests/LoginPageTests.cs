@@ -28,10 +28,10 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
         {
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
             {
-                var path = ConfigurationManager.AppSettings["Logs"] + TestContext.CurrentContext.Test.Name + ".txt";
-                File.WriteAllText(path, TestContext.CurrentContext.Test.FullName + " " + TestContext.CurrentContext.TestDirectory);
+                var path = ConfigurationManager.AppSettings["Logs"] + TestContext.CurrentContext.Test.Name;
+                File.WriteAllText(path+ ".txt", TestContext.CurrentContext.Test.FullName +TestContext.CurrentContext.TestDirectory);
                 var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-                screenshot.SaveAsFile(path + TestContext.CurrentContext.Test.Name + ".jpg", ScreenshotImageFormat.Jpeg);
+                screenshot.SaveAsFile(path +".jpg", ScreenshotImageFormat.Jpeg);
             }
             this.driver.Quit();
         }
@@ -41,7 +41,7 @@ namespace BlogBuild.Tests.Pages.LoginPage.LoginPageTests
 
 
         [Test]
-        [Property("UITest Login loaded", 1)]
+        [Property("Test Login Page loaded", 1)]
         [Author("Rossen Dimov")]
 
         public void LoginPageLoaded()
